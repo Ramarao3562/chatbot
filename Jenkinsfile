@@ -5,14 +5,14 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Checkout the code from GitHub
-                git branch: 'main', url: 'https://github.com/Ramarao3562/note_app.git'
+                git branch: 'main', url: 'https://github.com/Ramarao3562/chatbot.git'
             }
         }
         stage('Install Dependencies') {
             steps {
                 script {
                     // Create a virtual environment
-                    bat 'python3 -m venv venv'
+                    bat 'python -m venv venv' // Change python3 to python
                     // Activate the virtual environment and install dependencies
                     bat 'venv\\Scripts\\activate && pip install -r requirements.txt'
                 }
@@ -41,3 +41,4 @@ pipeline {
         }
     }
 }
+
